@@ -14,7 +14,7 @@ sudo mkdir /etc/redis
 sudo cp ./redis-ass.conf /etc/redis/redis.conf
 
 #REDIS AS A SERVICE
-sudo cat ./redis-service.txt | sudo tee /etc/systemd/system/redis.service
+sudo cat ./redis-service.txt | sudo tee -a  /etc/systemd/system/redis.service
 
 # ADDING REDIS USER AND GIVING PERMISSIONS TO FOLDER
 sudo adduser --system --group --no-create-home redis
