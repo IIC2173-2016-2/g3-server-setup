@@ -2,7 +2,7 @@ sudo apt-get update
 sudo apt-get install build-essential tcl
 
 #DOWNLOAD REDIS SOURCE STABLE
- cd /tmp
+cd /tmp
 curl -O http://download.redis.io/redis-stable.tar.gz
 tar xzvf redis-stable.tar.gz
 cd redis-stable
@@ -11,10 +11,10 @@ cd redis-stable
 sudo make install
 sudo mkdir /etc/redis
 #COPYNG REDIS AS A SERVICE CONFIG
-sudo cp ./redis-ass.conf /etc/redis
+sudo cp ./redis-ass.conf /etc/redis/redis.conf
 
 #REDIS AS A SERVICE
-sudo cat redis-service.txt | sudo tee /etc/systemd/system/redis.service
+sudo cat ./redis-service.txt | sudo tee /etc/systemd/system/redis.service
 
 # ADDING REDIS USER AND GIVING PERMISSIONS TO FOLDER
 sudo adduser --system --group --no-create-home redis
